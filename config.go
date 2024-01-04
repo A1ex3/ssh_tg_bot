@@ -11,7 +11,6 @@ type Config struct {
 	TgBotDebug    bool
 	UserList      []int64 `json:"userList"`
 	TgBotApiToken string  `json:"tgBotApiToken"`
-	HostName      string  `json:"hostName"`
 }
 
 func (config *Config) Unmarshal(path_to_config string) error {

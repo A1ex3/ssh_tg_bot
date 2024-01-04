@@ -7,7 +7,14 @@ import (
 
 func main() {
 	var config_path string
+	var user string
+	var host string
+	var ip string
+
 	flag.StringVar(&config_path, "config_path", "config.json", "Path to config.json")
+	flag.StringVar(&user, "user", "", "")
+	flag.StringVar(&host, "host", "", "")
+	flag.StringVar(&ip, "ip", "", "")
 	flag.Parse()
 
 	config := &Config{}
@@ -28,18 +35,11 @@ func main() {
 
 	messageTemplate := &MessageTemplate{}
 
-	sshInfo := &SshInfo{}
-	sshInfoGet := sshInfo.Get() //
-
-	if sshInfoGet != nil {
-		panic(sshInfoGet)
-	}
-
 	var msg string = messageTemplate.Create(
-		sshInfo.HostIp,
+		host,
+		user,
 		time.Now(),
-		sshInfo.RemoteIp,
-		sshInfo.RemoteIpPort,
+		ip,
 	)
 
 	tgbot.Send(msg)
