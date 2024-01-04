@@ -19,7 +19,7 @@ Ip: 127.0.0.1
 
 ## How to use
 ```bash
-wget https://github.com/MindfulGuard/server/releases/download/main/build-release.tar.gz
+wget https://github.com/A1ex3/ssh_tg_bot/releases/download/main/ssh_tg_bot_build.tar.gz
 ```
 ```bash
 make setup
